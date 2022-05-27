@@ -1,26 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+<html class="no-js" lang="pt-br">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💖 Feliz Aniversario 💖</title>
+<head>
+    <meta charset="utf-8" />
+    <title>Instagram Codenation</title>
+    <meta name="description" content="" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-          <div class="col">
-            Column
-          </div>
-          <div class="col">
-            Column
-          </div>
-          <div class="col">
-            Column
-          </div>
+    <!-- HEADER -->
+    <header class="topbar">
+        <div class="container">
+            <nav class="topbar__navbar">
+                <a href="#" class="topbar__navbar__item">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="topbar__navbar__item">
+                    <img src="./img/instagram-logo.svg" width="120" alt="">
+                </a>
+                <a href="#" class="topbar__navbar__item">
+                    <i class="far fa-paper-plane"></i>
+                </a>
+            </nav>
         </div>
-      </div>
+    </header>
+
+    <!-- STORIES -->
+    <section class="stories">
+        <div class="container">
+            <div class="stories__container">
+                <a class="stories__item">
+                    <img src="img/me.jpg" class="stories__item__img">
+                    <p class="stories__item__label" style="margin-top: 6px">Seu story</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEED -->
+    <section class="feed"></section>
+    </div>
 </body>
+
+<script src="./scripts/randomwords.js"></script>
+<script src="./scripts/feed.js"></script>
+<script src="./scripts/story.js"></script>
+
+<script>
+    const profiles = [
+        {
+            publications: [
+                // Formatura
+                {
+                    img: "img/our/formatura_2.jpeg",
+                    description: "A mulher mais linda do meu mundo, te amo tanto carinha"
+                },
+                {
+                    img: "img/our/formatura.jpeg",
+                    description: "Eu tava la fora resenhando e vc foi me buscar, na volta muito doidos tiramos essa fotinha"
+                },
+                {
+                    img: "img/our/formatura.mp4",
+                    description: "Eu tava la fora resenhando e vc foi me buscar, na volta muito doidos tiramos essa fotinha",
+                    type: "video"
+                },
+                // Deti
+                {
+                    img: "img/our/deti.jpeg",
+                    description: ""
+                },
+                // Floripa
+                {
+                    img: "img/our/floripa.jpeg",
+                    description: "Eu amei essa viagem so nos! vamos fazer varias ainda"
+                },
+                {
+                    img: "img/our/floripa_2.jpeg",
+                    description: "Eu te admirando, rs"
+                }, 
+                {
+                    img: "img/our/floripa_3.jpeg",
+                    description: "Eu te admirando novamente, rs"
+                },
+                {
+                    img: "img/our/floripa_4.jpeg",
+                    description: "Nao canso...."
+                },
+                // SP
+                {
+                    img: "img/our/sp.jpeg",
+                    description: "Click aleatorio quando jantamos no restaurante nas nuvens em SP"
+                },
+                {
+                    img: "img/our/sp_2.jpeg",
+                    description: "Esse lugar tinha tudo pra ser bom"
+                },
+                // Dog
+                {
+                    img: "img/our/dog.jpeg",
+                    description: "Nossa primeira filha :)"
+                },
+                {
+                    img: "img/our/dog_2.jpeg",
+                    description: "Pena que o pai tem muita alergia :("
+                },
+                // Random
+                {
+                    img: "img/our/elevador.jpeg",
+                    description: "Uma fotinha random no elevador <3"
+                },
+                {
+                    img: "img/our/casamento.jpeg",
+                    description: "Em breve, nos ❤️"
+                },
+            ],
+            profileName: "vinimdutra",
+            profileImg: "img/me.jpg"
+        },
+    ]
+
+
+
+    for (const { profileImg, profileName, publications } of profiles) {
+        for (const { img, description, type } of publications) {
+            feedContainer.insertAdjacentHTML('beforeend', feedTemplate(profileImg, profileName, img, description, type))
+        }
+    }
+
+    let stories = [
+        "img/story/T.png",
+        "img/story/E.png",
+        "img/story/A.png",
+        "img/story/M.png",
+        "img/story/O.png",
+        "img/story/heart.png",
+    ];
+
+    for (const img of stories) {
+        storyContainer.insertAdjacentHTML('beforeend', storyTemplate(img, "vinimdutra"));
+    }
+</script>
+
 </html>
