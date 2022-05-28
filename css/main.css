@@ -239,6 +239,11 @@ figure {
     font-size: 0.8rem;
 }
 
+video {
+    display: block;
+    margin: auto;
+}
+
 @media (min-width: 968px) {
     .container {
         width: 728px;
@@ -253,17 +258,8 @@ figure {
     .card {
         width: 100%;
     }
+
+    video {
+        max-width: 320px;
+    }
 }
-
-
-video {
-    margin-left: 50vw;
-    transform: translate(-50%);
-}
-
-
-
-
-
-
-

@@ -20,7 +20,7 @@ const feedTemplate = (
             </button>
         </header>
         <figure class="card__body__figure">
-            <video controls autoplay muted>
+            <video autoplay muted loop controls>
                 <source src="${img}" type="video/mp4">
             </video>
         </figure>
